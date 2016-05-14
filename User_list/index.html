@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="users">
+    <head>
+        <meta charset="UTF-8">
+        <title>Lonely Hackers</title>
+        <link href="../browse_template/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    </head>
+    <body ng-controller="user">
+
+    <div class="row">
+        <div class="col-md-9">
+            <ul class="phones">
+                <li ng-repeat="phone in phones" class="thumbnail">
+                    <p class="name">
+                        {{phone.first_name}} {{phone.last_name}}
+                    </p>
+                    <p>
+                        areas of interest
+                    </p>
+                    <p>
+                        {{phone.email}}
+                    </p>
+                    <p>
+                        social
+                    </p>
+                    <p>
+                        {{phone.phone_number}}
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        var users = angular.module('users', []);
+        users.controller('user', function ($scope) {
+            $scope.phones = [
+                {'first_name': 'Ashley',
+                    'last_name': 'Tsao',
+                    'areas_of_interest': 'Front End',
+                    'email': 'something@gmail.com',
+                    'phone_number': '18005555'
+                },
+                {'first_name': 'Brian',
+                    'last_name': 'Cho',
+                    'areas_of_interest': 'Front End',
+                    'email': 'something@gmail.com',
+                    'phone_number': '18005555'
+                },
+                {'first_name': 'Will',
+                    'last_name': 'Yu',
+                    'areas_of_interest': 'Front End',
+                    'email': 'something@gmail.com',
+                    'phone_number': '18005555'
+                }
+            ];
+        });
+
+    </script>
+
+    </body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <!-- Title Tag -->
+    <title>November</title>
+    <!--
+
+    November Template
+
+    http://www.templatemo.com/tm-473-november
+
+    -->
+    <!-- <<Mobile Viewport Code>> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- <<Attched Stylesheets>> -->
+    <link rel="stylesheet" href="css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="css/media.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/home.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,600italic,400italic,800,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+
+
+    <script type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+//
+            $('a.poplight[href^=#]').click(function() {
+                var popID = $(this).attr('rel');
+                var popURL = $(this).attr('href');
+                var query= popURL.split('?');
+                var dim= query[1].split('&');
+                var popWidth = dim[0].split('=')[1];
+                $('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#about" class="close"><img src="http://png.findicons.com/files/icons/1714/dropline_neu/24/dialog_close.png" class="btn_close" title="Close" alt="Close" /></a>');
+                var popMargTop = ($('#' + popID).height() + 80) / 2;
+                var popMargLeft = ($('#' + popID).width() + 80) / 2;
+//Apply Margin to Popup
+                $('#' + popID).css({
+                    'margin-top' : -popMargTop,
+                    'margin-left' : -popMargLeft
+                });
+                $('body').append('<div id="fade"></div>');
+                $('#fade').css({'filter' : 'alpha(opacity=100)'}).fadeIn();
+                return false;
+            });
+            $('a.close, #fade').live('click', function() {
+                $('#fade , .popup_block').fadeOut(function() {
+                    $('#fade, a.close').remove();
+                });
+                return false;
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+<!-- \\ Begin Holder \\ -->
+<div class="DesignHolder">
+    <!-- \\ Begin Frame \\ -->
+    <div class="LayoutFrame">
+        <!-- \\ Begin Header \\ -->
+        <header>
+            <div class="Center">
+                <div class="site-logo">
+                    <h1><a href="#">Hacker<span>match</span></a></h1>
+                </div>
+                <div id="mobile_sec">
+                    <div class="mobile"><i class="fa fa-bars"></i><i class="fa fa-times"></i></div>
+                    <div class="menumobile">
+                        <!-- \\ Begin Navigation \\ -->
+                        <nav class="Navigation">
+                            <ul>
+                                <li class="active">
+                                    <a href="#home">Home</a>
+                                    <span class="menu-item-bg"></span>
+                                </li>
+                                <li>
+                                    <a href="#about">About</a>
+                                    <span class="menu-item-bg"></span>
+                                </li>
+                                <li>
+                                    <a href="#contact">Contact</a>
+                                    <span class="menu-item-bg"></span>
+                                </li>
+                                <li>
+                                    <a href="#?w=500" rel="03" class="poplight">Login</a>
+                                    <span class="menu-item-bg"></span>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- // End Navigation // -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- // End Header // -->
+        <!-- \\ Begin Banner Section \\ -->
+        <div class="Banner_sec" id="home">
+            <!--  \\ Begin banner Side -->
+            <div class="bannerside">
+                    <!--  \\ Begin Left Side -->
+                    <div class="leftside">
+                        <div id="logo"><img src = "https://www.prestashop.com/blog/fr/files/2014/04/prestashop-hackathon-logo.png"></div>
+                        <h3>Hackermatch<span>Need a group?</span></h3>
+                        <p>Hackermatch is designed for you to find other creative coders to participate in a hackathon together. You can browse for applicants or search by preference!</p>
+                        <a href="../SignUp1/index.html">Get started</a>
+                    </div>
+                    <!--  // End Left Side // -->
+            </div>
+            <!--  // End banner Side // -->
+            <div class="clear"></div>
+        </div>
+        <!-- // End Banner Section // -->
+        <!-- \\ Begin Container \\ -->
+        <div id="Container">
+            <!-- \\ Begin About Section \\ -->
+            <div class="About_sec" id="about">
+                <div class="Center">
+                    <h2>About Hackermatch</h2>
+                    <p>Hackermatch is designed to bring coders from around the world together participating in the same event to collaborate and work on a project together in the hopes of winning something idk.</p>
+                    <div class="Line"></div>
+                    <!-- \\ Begin Tab side \\ -->
+                    <div class="Tabside">
+                        <div class="clear"></div>
+                        <div class="tabcontent" id="cont-1-1">
+                            <div class="TabImage">
+                                <div class="img1">
+                                    <figure><img src="img/hackathon-graphic.png" alt="image"></figure>
+                                </div>
+                            </div>
+                            <div class="Description">
+                                <h3>Brian is a littlr fagget<span>but its okay cause we'rr all kind of fggets</span></h3>
+                                <p>November is free HTML CSS website template from templatemo and you can download and use it for any purpose. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit nunc, porta commodo euismod eu, fermentum a neque. Fusce scelerisque tincidunt auctor. Integer varius ullamcorper interdum.</p>
+                                <p>Phasellus pretium elementum rhoncus. Aenean sit amet odio eu ante volutpat rutrum. Vestibulum ullamcorper faucibus orci, in blandit massa fringilla at. Nulla in fermentum eros. Suspendisse vitae aliquam metus.</p>
+                            </div>
+                        </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <!-- // End Tab Side // -->
+                </div>
+            </div>
+            <!-- // End About Section // -->
+            <!-- \\ Begin Contact Section \\ -->
+            <div class="Contact_sec" id="contact">
+                <div class="Contactside">
+                    <div class="Center">
+                        <h2>contact us</h2>
+                        <p>Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum<br>
+                            feugiat velit mauris egestas quamut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
+                        <div class="Line"></div>
+                    </div>
+
+                </div>
+
+                <!-- \\ Begin Get Section \\ -->
+                <div class="Get_sec">
+                    <div class="Mid">
+                        <!-- \\ Begin Left Side \\ -->
+                        <div class="Leftside">
+                            <form action="#">
+                                <fieldset>
+                                    <p><input type="text" value="" placeholder="NAME" class="field"></p>
+                                    <p><input type="email" value="" placeholder="EMAIL" class="field"></p>
+                                    <p><input type="text" value="" placeholder="TITLE" class="field"></p>
+                                    <p><textarea cols="2"  rows="2" placeholder="MESSAGE"></textarea></p>
+                                    <p><input type="submit" value="send" class="button"></p>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <!-- // End Left Side // -->
+                        <!-- \\ Begin Right Side \\ -->
+                        <div class="Rightside">
+                            <address class="Email">
+                                <a href="mailto:info@november.com">info@november.com</a>
+                            </address>
+                            <div class="clear"></div>
+                            <ul>
+                                <li><a rel="nofollow" href="https://www.facebook.com/groups/hackathonhackers/"
+                                       target="_parent"><img src="img/facebook-icn.png" alt="image"></a></li>
+                                <li><a href="#"><img src="img/twitter-icn.png" alt="image"></a></li>
+                                <li><a href="#"><img src="img/google-plus-icn.png" alt="image"></a></li>
+                            </ul>
+                        </div>
+                        <!-- // End Right Side // -->
+                    </div>
+                    <!-- \\ Begin Footer \\-->
+                    <footer>
+                        <div class="Cntr">
+                            <p>COPYRIGHT © 2084 COMPANY NAME. DESIGN: <a rel="nofollow" href="http://www.templatemo.com" target="_parent">TEMPLATEMO</a></p>
+                        </div>
+                    </footer>
+                    <!-- // End Footer // -->
+                </div>
+                <!-- // End Get Section // -->
+
+            </div>
+            <!-- // End Contact Section // -->
+        </div>
+        <!-- // End Container // -->
+    </div>
+    <!-- // End Layout Frame // -->
+</div>
+<!-- // End Design Holder // -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+</div>
+
+<script src="js/script.js"></script>
+
+<!-- <<Attched Javascripts>> -->
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.sudoSlider.min.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/modernizr.js"></script>
+
+</body>
+
+<div id="03" class="popup_block">
+
+    Login Information
+
+</div>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="users">
+<head>
+    <meta charset="UTF-8">
+    <title>Lonely Hackers</title>
+    <link href="../browse_template/css/bootstrap.min.css" rel="stylesheet">
+    <link href="userlist.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+
+</head>
+<body ng-controller="user">
+
+<div class="row">
+    <p class="col-md-9">
+        <ul ng-repeat="phone in phones" class="phones thumbnail">
+            <li>
+                <form class="register">
+                    <p class="name">
+                        {{phone.first_name}} {{phone.last_name}}
+                    </p>
+                    <p class = "list">
+                        <i>{{phone.email}}</i><br>
+                        <i>{{phone.phone_number}}</i><br>
+                        <i>{{phone.comment}}</i>
+                    </p>
+                </form>
+                <p class = "social">
+                    <a rel="nofollow" href="https://www.facebook.com/groups/hackathonhackers/"
+                       target="_parent"><img src="img/facebook-icn.png" alt="image" width = 37px></a>
+                    <a href="https://www.twitter.com/"><img src="img/twitter-icn.png" alt="image"></a>
+                    <a href="https://www.plus.google.com/"><img src="img/google-plus-icn.png" alt="image"></a>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+</div>
+
+<!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+<script src="js/script.js"></script>
+
+<script>
+
+    var my_data = new Firebase('https://dazzling-torch-3292.firebaseio.com/');
+
+
+    var users = angular.module("users", ["firebase"]);
+    users.controller('user', function ($scope, $firebaseObject) {
+        var ref = new Firebase("https://dazzling-torch-3292.firebaseio.com");
+        $scope.data = $firebaseObject(ref);
+
+
+        $scope.phones = [];
+        var syncObject = $firebaseObject(ref);
+        syncObject.$bindTo($scope, "data");
+
+
+        console.log(document.URL);
+        console.log("#");
+        if (document.URL == "http://localhost:63342/team_finder/homepage/userlist.html") {
+            my_data.on('child_added', function (snapshot) {
+
+                $scope.data = snapshot.val();
+
+                var phone_element = {
+                    'first_name': $scope.data.first_name,
+                    'last_name': $scope.data.last_name,
+                    'email': $scope.data.email,
+                    'phone_number': $scope.data.phone_number,
+                    'comment': $scope.data.comment
+                };
+
+                $scope.phones.push(phone_element);
+            });
+        }
+    });
+
+
+
+
+
+</script>
+
+</body>
+</html>
